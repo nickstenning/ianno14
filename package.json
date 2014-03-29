@@ -1,0 +1,15 @@
+{
+  "name": "ianno14",
+  "version": "0.0.0",
+  "description": "A demonstration of how easy it is to build applications with Annotator",
+  "main": "main.js",
+  "dependencies": {
+    "annotator": "2.0.0-dev"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}
