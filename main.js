@@ -1,17 +1,14 @@
 var Annotator = require('annotator');
 var DebugStore = require('annotator/lib/plugin/debugstore');
 
+$ = Annotator.Util.$;
+
 Annotator.Plugin.Location = (function() {
 
-  function Location(element, options) {
-    this.element = element;
-    this.options = options;
-    console.log("Location plugin constructed");
-  }
+  function Location() {}
 
   Location.prototype.pluginInit = function() {
     var self = this;
-    console.log("Location plugin initialized");
 
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Got your coordinates!");
@@ -28,13 +25,8 @@ Annotator.Plugin.Location = (function() {
     });
   };
 
-  Location.prototype.destroy = function() {};
-
   return Location;
 })();
-
-
-$ = Annotator.Util.$;
 
 $(function () {
 
@@ -43,8 +35,4 @@ $(function () {
   });
   ann.addPlugin('Location');
 
-  window.ann = ann;
-
 }());
-
-exports.Annotator = Annotator;
