@@ -1,5 +1,5 @@
 var Annotator = require('annotator');
-var DebugStore = require('annotator/annotator.debugstore');
+var DebugStore = require('annotator/lib/plugin/debugstore');
 
 Annotator.Plugin.Location = (function() {
 
