@@ -1,4 +1,5 @@
-var Annotator = require('annotator/lib/annotator');
+var Annotator = require('annotator');
+var DebugStore = require('annotator/annotator.debugstore');
 
 Annotator.Plugin.Location = (function() {
 
@@ -25,10 +26,6 @@ Annotator.Plugin.Location = (function() {
         annotation.coords.accuracy = self.coords.accuracy;
       }
     });
-
-    this.annotator.on('annotationCreated', function (annotation) {
-      console.log("Created annotation:", annotation);
-    });
   };
 
   Location.prototype.destroy = function() {};
@@ -41,8 +38,12 @@ $ = Annotator.Util.$;
 
 $(function () {
 
-  var ann = new Annotator(document.body);
+  var ann = new Annotator(document.body, {
+    store: {type: DebugStore}
+  });
   ann.addPlugin('Location');
+
+  window.ann = ann;
 
 }());
 
